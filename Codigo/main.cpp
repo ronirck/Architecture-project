@@ -13,6 +13,118 @@ using json = nlohmann::json;
 using namespace std;
 using namespace chrono;
 
+void sesionIniciada()
+{
+    mvprintw(1, 10, "hi");
+    refresh();
+    getch();
+}
+
+void createDataBase()
+{
+    MDB_env *env; // Entorno de la base de datos
+    MDB_dbi dbi;  // Base de datos
+    MDB_txn *txn;
+
+    // Crear el entorno de la base de datos
+    mdb_env_create(&env);
+    mdb_env_set_mapsize(env, 10485760);    // Establecer el tamaño máximo del entorno: 10 MB
+    mdb_env_open(env, "./users", 0, 0664); // Abrir el entorno de la base de datos
+    mdb_env_close(env);
+}
+
+void insertData(const string &name, const string &lastName, const string &password)
+{
+    static int userIdCounter = 0; // Contador para user_id
+    MDB_txn *txn;
+    MDB_env *env; // Entorno de la base de datos
+    MDB_dbi dbi;  // Base de datos
+    MDB_val key, data;
+
+    // Crear el entorno de la base de datos
+    mdb_env_create(&env);
+    mdb_env_open(env, "./users", 0, 0664); // Abrir el entorno de la base de datos
+    mdb_txn_begin(env, nullptr, 0, &txn);
+    mdb_dbi_open(txn, nullptr, 0, &dbi);
+
+    // Incrementar el user_id
+    userIdCounter++;
+
+    string userId = to_string(userIdCounter);
+
+    json user;
+    user["user_id"] = userId;
+    user["name"] = name;
+    user["lastName"] = lastName;
+    user["password"] = password; // Formato: name,lastName,password
+    user["user_auth"] = "user";  // Formato: name,lastName,password
+
+    string userData = user.dump();
+
+    key.mv_size = userId.size();
+    key.mv_data = (void *)userId.data();
+    data.mv_size = userData.size();
+    data.mv_data = (void *)userData.data();
+
+    mdb_put(txn, dbi, &key, &data, 0); // Insertar el registro en la base de datos
+    mdb_txn_commit(txn);               // Confirmar la transacción
+
+    mdb_dbi_close(env, dbi);
+    mdb_env_close(env);
+
+    clear();
+    printw("hi");
+    refresh();
+    getch();
+}
+
+// Función para validar usuario y contraseña
+bool requestData(const string &username, const string &password)
+{
+    MDB_txn *txn;
+    MDB_val key, data;
+    int rc;
+
+    // Iniciar una transacción
+    rc = mdb_txn_begin(env, nullptr, MDB_RDONLY, &txn);
+    if (rc != MDB_SUCCESS)
+    {
+        cerr << "Error beginning transaction: " << mdb_strerror(rc) << endl;
+        return false;
+    }
+
+    // Crear la clave para buscar el usuario
+    // En este caso, asumimos que el username es el userId
+    key.mv_size = username.size();
+    key.mv_data = (void *)username.data();
+
+    // Buscar el registro en la base de datos
+    rc = mdb_get(txn, dbi, &key, &data);
+    if (rc != MDB_SUCCESS)
+    {
+        cerr << "Error getting data: " << mdb_strerror(rc) << endl;
+        mdb_txn_abort(txn);
+        return false; // Usuario no encontrado
+    }
+
+    // Convertir el valor recuperado a una cadena
+    string userData(static_cast<char *>(data.mv_data), data.mv_size);
+
+    // Parsear el JSON
+    json user = json::parse(userData);
+
+    // Extraer la contraseña almacenada
+    string storedPassword = user["password"];
+
+    // Comparar la contraseña ingresada con la almacenada
+    bool isValid = (storedPassword == password);
+
+    // Confirmar la transacción
+    mdb_txn_commit(txn);
+
+    return isValid;
+}
+
 // Función para simular una pantalla de carga
 void loadingScreen()
 {
@@ -30,7 +142,7 @@ void shutDownScreen(int linea)
     mvprintw(linea + 2, 10, "Cerrando sistema");
     for (int i = 0; i < 5; i++)
     {
-        mvprintw(linea + 1, 27 + i, ".");
+        mvprintw(linea + 2, 26 + i, ".");
         refresh(); // Actualizar la pantalla
         this_thread::sleep_for(milliseconds(500));
     }
@@ -47,28 +159,82 @@ void mostrarBienvenida()
     refresh(); // Actualizar la pantalla
 }
 
+void readData(string &data, int line, int space, char ch, bool isPassword)
+{
+
+    if (ch == KEY_BACKSPACE || ch == 7)
+    { // Retroceso
+        if (!data.empty())
+        {
+            data.pop_back();                          // Eliminar el último carácter
+            mvprintw(line, space + data.size(), " "); // Limpiar el último carácter
+            move(line, space + data.size());          // Mover el cursor a la posición correcta
+        }
+    }
+    else
+    {
+        data += ch; // Agregar el carácter a la cadena
+        if (isPassword)
+        {
+            mvprintw(line, space + data.size() - 1, "*"); // Mostrar asterisco en lugar del carácter
+        }
+        else
+        {
+            mvprintw(line, space + data.size() - 1, "%c", ch); // Mostrar el carácter en la pantalla
+        }
+    }
+    refresh();
+}
+
 void iniciarSesion()
 {
     clear();
     mvprintw(1, 10, "==============================");
     mvprintw(2, 10, "      INICIO DE SESION          ");
     mvprintw(3, 10, "==============================");
+    char ch;
 
-    // Solicitar nombre de usuario
-    mvprintw(6, 10, "Ingrese su nombre de usuario: ");
-    char username[50];
-    echo(); // Mostrar la entrada del usuario
-    getnstr(username, sizeof(username) - 1);
+    // Solicitar name de usuario
+    mvprintw(6, 10, "Ingrese su name de usuario: ");
+    string username; // Usar string para el name de usuario
+    noecho();        // Mostrar la entrada del usuario
+    while ((ch = getch()) != '\n' && ch != '\r')
+    { // Leer hasta Enter
+        readData(username, 6, 10 + 30, ch, false);
+    }
 
     // Solicitar contraseña
     mvprintw(7, 10, "Ingrese su contraseña: ");
-    char password[50];
-    getnstr(password, sizeof(password) - 1);
+    string password; // Usar string para la contraseña
+    noecho();        // Ocultar la entrada del usuario
+    while ((ch = getch()) != '\n' && ch != '\r')
+    { // Leer hasta Enter
+        readData(password, 7, 10 + 24, ch, true);
+    }
+
+    // Verificar si los campos están vacíos
+    if (username.empty() || password.empty())
+    {
+        mvprintw(9, 10, "Error: Todos los campos son obligatorios. Presione cualquier tecla para reiniciar.");
+        refresh();
+        getch();         // Esperar a que el usuario presione una tecla
+        iniciarSesion(); // Reiniciar el bucle para volver a solicitar los datos
+    }
 
     noecho(); // Ocultar la entrada del usuario nuevamente
     refresh();
 
-    mostrarBienvenida(); // Volver a mostrar la bienvenida
+    if (requestData(username1, password1))
+    {
+        sesionIniciada();
+    }
+    else
+    {
+        mvprintw(9, 10, "Error: usuario o contraseña incorrectos.");
+        refresh();
+        getch();             // Esperar a que el usuario presione una tecla
+        mostrarBienvenida(); // Volver a mostrar la bienvenida
+    }
 }
 
 void crearUsuario()
@@ -77,39 +243,59 @@ void crearUsuario()
     mvprintw(1, 10, "==============================");
     mvprintw(2, 10, "        CREAR USUARIO           ");
     mvprintw(3, 10, "==============================");
+    char ch;
 
-    // Solicitar nombre
+    // Solicitar name
     mvprintw(6, 10, "Ingrese su nombre: ");
-    char nombre[50];
-    echo(); // Mostrar la entrada del usuario
-    getnstr(nombre, sizeof(nombre) - 1);
+    string name; // Usar string para el name de usuario
+    noecho();    // Mostrar la entrada del usuario
+    while ((ch = getch()) != '\n' && ch != '\r')
+    { // Leer hasta Enter
+        readData(name, 6, 10 + 19, ch, false);
+    }
 
-    // Solicitar apellido
+    // Solicitar lastName
     mvprintw(7, 10, "Ingrese su apellido: ");
-    char apellido[50];
-    getnstr(apellido, sizeof(apellido) - 1);
+    string lastName; // Usar string para el lastName de usuario
+    noecho();        // Mostrar la entrada del usuario
+    while ((ch = getch()) != '\n' && ch != '\r')
+    { // Leer hasta Enter
+        readData(lastName, 7, 10 + 21, ch, false);
+    }
 
     // Solicitar contraseña
     mvprintw(8, 10, "Ingrese su contraseña: ");
-    char password[50];
-    getnstr(password, sizeof(password) - 1);
+    string password; // Usar string para la contraseña
+    noecho();        // Ocultar la entrada del usuario
+    while ((ch = getch()) != '\n' && ch != '\r')
+    { // Leer hasta Enter
+        readData(password, 8, 10 + 24, ch, true);
+    }
 
-    // Solicitar repetir contraseña
-    mvprintw(9, 10, "Repita su contraseña: ");
-    char passwordRepetido[50];
-    getnstr(passwordRepetido, sizeof(passwordRepetido) - 1);
+    // Verificar si los campos están vacíos
+    if (name.empty() || lastName.empty() || password.empty())
+    {
+        mvprintw(10, 10, "Error: Todos los campos son obligatorios. Presione cualquier tecla para reiniciar.");
+        refresh();
+        getch();        // Esperar a que el usuario presione una tecla
+        crearUsuario(); // Reiniciar el bucle para volver a solicitar los datos
+    }
 
     noecho(); // Ocultar la entrada del usuario nuevamente
     refresh();
 
-    mostrarBienvenida(); // Volver a mostrar la bienvenida
+    string name1 = "san", lastName1 = "san", password1 = "san";
+
+    insertData(name1, lastName1, password1);
+
+    iniciarSesion(); // Volver a mostrar la bienvenida
 }
 
 void mostrarMenu()
 {
     const char *opciones[] = {
         "Iniciar Sesión",
-        "Crear usuario",
+        "Crear Usuario",
         "Salir"};
     int numOpciones = sizeof(opciones) / sizeof(opciones[0]);
     int seleccion = 0;
@@ -166,6 +352,8 @@ int main()
     keypad(stdscr, TRUE); // Habilitar las teclas especiales
     noecho();             // No mostrar la entrada del usuario
     curs_set(0);          // Ocultar el cursor
+
+    createDataBase();
 
     loadingScreen();
     mostrarBienvenida(); // Mostrar el mensaje de bienvenida

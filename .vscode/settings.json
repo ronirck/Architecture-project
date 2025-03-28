@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        ".env*": "dotenv",
-        "*.asm": "mips",
-        "iostream": "cpp"
-    }
-}
