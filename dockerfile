@@ -18,7 +18,7 @@ WORKDIR /app
 COPY . /app
 
 # Compilar el proyecto (ajusta el comando según tu Makefile o compilación)
-RUN g++ -o mi_proyecto /app/Codigo/visualizacionDeLaBaseDeDatos.cpp -I /app/Librerias -llmdb -ljsoncpp -lncurses
+RUN g++ -o mi_proyecto /app/Codigo/main.cpp -I /app/Librerias -llmdb -ljsoncpp -lncurses
 
 
 # Comando por defecto al ejecutar el contenedor
