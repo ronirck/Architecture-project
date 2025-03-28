@@ -4,21 +4,15 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/lib/qt5",
-                "/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
-                "/usr/include/x86_64-linux-gnu/qt5",
-                "/usr/include/x86_64-linux-gnu/qt5/QtCore"
+                "/home/santi/Escritorio/Proyecto/Librerias/lmdb/usr/include",
+                "/home/santi/Escritorio/Proyecto/Librerias/lmdb/usr/lib/x86_64-linux-gnu",
+                "/home/santi/Escritorio/Proyecto/Librerias/ncurses-6.3"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
-            "cStandard": "c17",
-            "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-x64",
-            "browse": {
-                "path": [
-                    "/usr/lib/qt5"
-                ]
-            }
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4

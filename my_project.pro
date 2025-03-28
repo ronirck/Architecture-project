@@ -1,9 +1,0 @@
-QT += core widgets
-SOURCES += main.cpp MyWindow.cpp LMDBWorker.cpp
-HEADERS += MyWindow.h LMDBWorker.h
-LIBS += -llmdb
-DESTDIR = build
-OBJECTS_DIR = build/obj
-MOC_DIR = build/moc
-UI_DIR = build/ui
-RCC_DIR = build/rcc
