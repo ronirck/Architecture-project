@@ -1342,5 +1342,29 @@
         "system_time_seconds": 6,
         "user_time_microseconds": 513833,
         "user_time_seconds": 134
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 27484,
+        "system_time_microseconds": 87564,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 243235,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 27680,
+        "system_time_microseconds": 91084,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 263132,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 317460,
+        "system_time_microseconds": 10200,
+        "system_time_seconds": 1,
+        "user_time_microseconds": 788432,
+        "user_time_seconds": 21
     }
 ]
