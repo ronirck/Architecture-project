@@ -3,21 +3,6 @@
 std::atomic<bool> dataLoaded(false); // Bandera para indicar si la carga terminó
 vector<Patient> allPatients;         // Almacenará todos los pacientes
 
-void loadAllPatients();
-void drawBox(int y, int x, int height, int width);
-void logout();
-void mostrarDatosMedicos();
-void mostrarDatosSistema();
-void sesionIniciada();
-void loadingScreen();
-void shutDownScreen();
-void mostrarBienvenida();
-void mostrarMenuPrincipal();
-void readData(string &data, int line, int space, char ch, bool isPassword);
-void iniciarSesion();
-void crearUsuario();
-int mostrarMenu(vector<string> opciones, int inicio);
-
 void loadAllPatients()
 {
     allPatients = getAllPatients(); // Cargar todos los pacientes desde LMDB
@@ -232,7 +217,7 @@ void mostrarDatosSistema()
     }
 }
 
-void sesionIniciada()
+void sesionIniciada(string name)
 {
     bool flag = true;
 
@@ -241,7 +226,7 @@ void sesionIniciada()
         clear(); // Limpiar la pantalla
         drawBox(1, 10, 5, 25);
         mvprintw(2, 15, "MENU DE USUARIO");
-        mvprintw(4, 15, "Hola, Usuario!");
+        mvprintw(4, 15, "Hola, %s!", name.c_str());
         refresh(); // Actualizar la pantalla
 
         vector<string> opciones = {"Vista de Informacion Medica", "Vista de Informacion del Sistema", "Cerrar Sesion"};
@@ -395,7 +380,7 @@ void iniciarSesion()
 
     if (validateUser(username, password, SECRET_KEY, IV))
     {
-        sesionIniciada();
+        sesionIniciada(username);
     }
     else
     {

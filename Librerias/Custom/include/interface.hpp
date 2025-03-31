@@ -14,21 +14,19 @@
 using namespace std;
 using namespace chrono;
 
-// FUNCIONES DE EXPERIENCIA DE INTERFAZ
+void loadAllPatients();
+void drawBox(int y, int x, int height, int width);
+void logout();
+void mostrarDatosMedicos();
+void mostrarDatosSistema();
+void sesionIniciada(string name);
 void loadingScreen();
 void shutDownScreen();
-int mostrarMenu(vector<string> opciones, int inicio);
 void mostrarBienvenida();
-void drawBox(int y, int x, int height, int width);
-
-// FUNCIONES PARA EL INICIO DE SESION
+void mostrarMenuPrincipal();
 void readData(string &data, int line, int space, char ch, bool isPassword);
 void iniciarSesion();
 void crearUsuario();
-void mostrarMenuPrincipal();
-
-// FUNCIONES DEL USUARIO
-void mostrarDatosSistema();
-void mostrarDatosMedicos();
+int mostrarMenu(vector<string> opciones, int inicio);
 
 #endif
