@@ -1,0 +1,1346 @@
+[
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 32372,
+        "system_time_microseconds": 79602,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 358210,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 32372,
+        "system_time_microseconds": 88573,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 370398,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 316120,
+        "system_time_microseconds": 8046,
+        "system_time_seconds": 1,
+        "user_time_microseconds": 701649,
+        "user_time_seconds": 31
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 28212,
+        "system_time_microseconds": 58055,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 298571,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 28212,
+        "system_time_microseconds": 60200,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 309602,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314524,
+        "system_time_microseconds": 696088,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 145092,
+        "user_time_seconds": 26
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 28276,
+        "system_time_microseconds": 87599,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 306596,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 28276,
+        "system_time_microseconds": 89036,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 311627,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 43068,
+        "system_time_microseconds": 155457,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 528557,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 58456,
+        "system_time_microseconds": 172816,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 873684,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 71716,
+        "system_time_microseconds": 214277,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 188264,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 285164,
+        "system_time_microseconds": 499529,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 287487,
+        "user_time_seconds": 15
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 285164,
+        "system_time_microseconds": 508758,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 300428,
+        "user_time_seconds": 15
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 316664,
+        "system_time_microseconds": 577374,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 183475,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 51424,
+        "system_time_microseconds": 159452,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 707570,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 53376,
+        "system_time_microseconds": 167294,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 708539,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 66072,
+        "system_time_microseconds": 184195,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 43772,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 77168,
+        "system_time_microseconds": 218874,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 323193,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 316268,
+        "system_time_microseconds": 750507,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 680826,
+        "user_time_seconds": 25
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313572,
+        "system_time_microseconds": 809396,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 211359,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 313572,
+        "system_time_microseconds": 816146,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 211359,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 313572,
+        "system_time_microseconds": 818546,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 213646,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 313572,
+        "system_time_microseconds": 818546,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 220112,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 313572,
+        "system_time_microseconds": 818618,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 225019,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 313572,
+        "system_time_microseconds": 827827,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 225019,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 313572,
+        "system_time_microseconds": 836392,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 225019,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 313572,
+        "system_time_microseconds": 836563,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 230020,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 313572,
+        "system_time_microseconds": 846053,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 232414,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 58008,
+        "system_time_microseconds": 201054,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 900726,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 58192,
+        "system_time_microseconds": 201338,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 918102,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314072,
+        "system_time_microseconds": 9520,
+        "system_time_seconds": 1,
+        "user_time_microseconds": 20936,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 58428,
+        "system_time_microseconds": 289759,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 775532,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 59820,
+        "system_time_microseconds": 290285,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 811092,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314456,
+        "system_time_microseconds": 706831,
+        "system_time_seconds": 1,
+        "user_time_microseconds": 994198,
+        "user_time_seconds": 25
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 28384,
+        "system_time_microseconds": 101465,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 304395,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 28416,
+        "system_time_microseconds": 103974,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 311923,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 97864,
+        "system_time_microseconds": 267018,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 993099,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 104444,
+        "system_time_microseconds": 290773,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 238955,
+        "user_time_seconds": 2
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 112020,
+        "system_time_microseconds": 297987,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 576151,
+        "user_time_seconds": 2
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 618654,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 637114,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 618654,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 646226,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 618813,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 652330,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 619237,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 667829,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 628401,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 669334,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 628511,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 682682,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 638005,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 686738,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 647416,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 687730,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 660149,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 687730,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 666038,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 692205,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 666038,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 703969,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 673104,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 703969,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 683543,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 703969,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 693367,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 834288,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 693669,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 844232,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 702250,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 846539,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 720992,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 847042,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 728974,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 847042,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 739449,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 848063,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 739733,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 856830,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 749427,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 856830,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 758204,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 858469,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 769543,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 858469,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 779989,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 858469,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 786089,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 862116,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 796852,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 862116,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 810366,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 862116,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 814102,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 869729,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 832510,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 870663,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 841642,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 873979,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 850759,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 877028,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 860187,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 879111,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 316716,
+        "system_time_microseconds": 869658,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 882299,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 21108,
+        "system_time_microseconds": 72064,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 162145,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 21188,
+        "system_time_microseconds": 73615,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 174837,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 63644,
+        "system_time_microseconds": 178002,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 973778,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 63652,
+        "system_time_microseconds": 178436,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 986647,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 67028,
+        "system_time_microseconds": 205515,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 120058,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 72916,
+        "system_time_microseconds": 242426,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 232334,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 72920,
+        "system_time_microseconds": 251560,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 247740,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 72924,
+        "system_time_microseconds": 251827,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 269213,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 74196,
+        "system_time_microseconds": 255122,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 285818,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 74200,
+        "system_time_microseconds": 255122,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 301678,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 74208,
+        "system_time_microseconds": 255271,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 317202,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 74208,
+        "system_time_microseconds": 256637,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 334513,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 74208,
+        "system_time_microseconds": 266787,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 354459,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 74208,
+        "system_time_microseconds": 267423,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 378260,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 74212,
+        "system_time_microseconds": 276771,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 383855,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 74212,
+        "system_time_microseconds": 277640,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 398485,
+        "user_time_seconds": 1
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 139940,
+        "system_time_microseconds": 381455,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 452658,
+        "user_time_seconds": 3
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 139940,
+        "system_time_microseconds": 388879,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 470750,
+        "user_time_seconds": 3
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 142536,
+        "system_time_microseconds": 392713,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 831353,
+        "user_time_seconds": 3
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 150452,
+        "system_time_microseconds": 401184,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 212441,
+        "user_time_seconds": 4
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 203216,
+        "system_time_microseconds": 480630,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 86946,
+        "user_time_seconds": 7
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 203216,
+        "system_time_microseconds": 489269,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 113224,
+        "user_time_seconds": 7
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 203216,
+        "system_time_microseconds": 496173,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 451958,
+        "user_time_seconds": 7
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 206748,
+        "system_time_microseconds": 505847,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 981141,
+        "user_time_seconds": 7
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 211416,
+        "system_time_microseconds": 533451,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 319967,
+        "user_time_seconds": 8
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 222964,
+        "system_time_microseconds": 533758,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 701289,
+        "user_time_seconds": 9
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 235632,
+        "system_time_microseconds": 533758,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 980608,
+        "user_time_seconds": 10
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 316332,
+        "system_time_microseconds": 586700,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 745151,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314032,
+        "system_time_microseconds": 937171,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 931548,
+        "user_time_seconds": 25
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314088,
+        "system_time_microseconds": 687455,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 88801,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313948,
+        "system_time_microseconds": 640801,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 88805,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313352,
+        "system_time_microseconds": 490201,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 314351,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314452,
+        "system_time_microseconds": 607649,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 352159,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313820,
+        "system_time_microseconds": 374585,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 126629,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313968,
+        "system_time_microseconds": 774644,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 222020,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313636,
+        "system_time_microseconds": 706451,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 587621,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314404,
+        "system_time_microseconds": 575343,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 918722,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314456,
+        "system_time_microseconds": 676158,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 433293,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314628,
+        "system_time_microseconds": 992472,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 680722,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313544,
+        "system_time_microseconds": 839838,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 438389,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313360,
+        "system_time_microseconds": 813297,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 580098,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314484,
+        "system_time_microseconds": 579208,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 700452,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313692,
+        "system_time_microseconds": 24848,
+        "system_time_seconds": 1,
+        "user_time_microseconds": 624324,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314472,
+        "system_time_microseconds": 825542,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 701355,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313440,
+        "system_time_microseconds": 24183,
+        "system_time_seconds": 1,
+        "user_time_microseconds": 838753,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314376,
+        "system_time_microseconds": 775776,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 568831,
+        "user_time_seconds": 23
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313456,
+        "system_time_microseconds": 774811,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 565585,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313636,
+        "system_time_microseconds": 949741,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 311514,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313572,
+        "system_time_microseconds": 900237,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 340526,
+        "user_time_seconds": 23
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 312688,
+        "system_time_microseconds": 814352,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 727832,
+        "user_time_seconds": 22
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313388,
+        "system_time_microseconds": 929651,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 22197,
+        "user_time_seconds": 24
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313444,
+        "system_time_microseconds": 726612,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 186503,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313936,
+        "system_time_microseconds": 394273,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 396418,
+        "user_time_seconds": 20
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 313460,
+        "system_time_microseconds": 361815,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 461632,
+        "user_time_seconds": 20
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314688,
+        "system_time_microseconds": 458103,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 158646,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314344,
+        "system_time_microseconds": 599681,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 55477,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 50580,
+        "system_time_microseconds": 141913,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 687734,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 50716,
+        "system_time_microseconds": 148135,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 708934,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314472,
+        "system_time_microseconds": 540385,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 103970,
+        "user_time_seconds": 21
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 18632,
+        "system_time_microseconds": 95416,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 171748,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 20072,
+        "system_time_microseconds": 95416,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 194906,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 54084,
+        "system_time_microseconds": 298541,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 928795,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 89396,
+        "system_time_microseconds": 425823,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 160275,
+        "user_time_seconds": 2
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 89396,
+        "system_time_microseconds": 437504,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 177107,
+        "user_time_seconds": 2
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 120592,
+        "system_time_microseconds": 570051,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 741611,
+        "user_time_seconds": 3
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 120592,
+        "system_time_microseconds": 578876,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 762697,
+        "user_time_seconds": 3
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 317492,
+        "system_time_microseconds": 60425,
+        "system_time_seconds": 1,
+        "user_time_microseconds": 999124,
+        "user_time_seconds": 27
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 27760,
+        "system_time_microseconds": 62603,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 292149,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 27916,
+        "system_time_microseconds": 68417,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 322541,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 282228,
+        "system_time_microseconds": 709436,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 373798,
+        "user_time_seconds": 16
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 282228,
+        "system_time_microseconds": 709982,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 424271,
+        "user_time_seconds": 16
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 282228,
+        "system_time_microseconds": 710655,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 856740,
+        "user_time_seconds": 16
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 282228,
+        "system_time_microseconds": 720519,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 586369,
+        "user_time_seconds": 17
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 282228,
+        "system_time_microseconds": 721276,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 231224,
+        "user_time_seconds": 18
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 317744,
+        "system_time_microseconds": 816292,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 200671,
+        "user_time_seconds": 25
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 32552,
+        "system_time_microseconds": 127736,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 404497,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 35956,
+        "system_time_microseconds": 127954,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 437179,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 179124,
+        "system_time_microseconds": 648341,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 217561,
+        "user_time_seconds": 7
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 179132,
+        "system_time_microseconds": 648341,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 275442,
+        "user_time_seconds": 7
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 204568,
+        "system_time_microseconds": 718931,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 494748,
+        "user_time_seconds": 8
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 204568,
+        "system_time_microseconds": 721446,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 122496,
+        "user_time_seconds": 9
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 223896,
+        "system_time_microseconds": 858877,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 194172,
+        "user_time_seconds": 12
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 225564,
+        "system_time_microseconds": 878720,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 727279,
+        "user_time_seconds": 12
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 229236,
+        "system_time_microseconds": 881227,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 133134,
+        "user_time_seconds": 13
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 233244,
+        "system_time_microseconds": 899086,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 562012,
+        "user_time_seconds": 13
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 317644,
+        "system_time_microseconds": 203316,
+        "system_time_seconds": 1,
+        "user_time_microseconds": 31196,
+        "user_time_seconds": 29
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 314244,
+        "system_time_microseconds": 578321,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 368315,
+        "user_time_seconds": 19
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 314244,
+        "system_time_microseconds": 589289,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 490207,
+        "user_time_seconds": 19
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 314244,
+        "system_time_microseconds": 589403,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 504905,
+        "user_time_seconds": 19
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 314244,
+        "system_time_microseconds": 589403,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 521256,
+        "user_time_seconds": 19
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 314244,
+        "system_time_microseconds": 589613,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 533686,
+        "user_time_seconds": 19
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 314244,
+        "system_time_microseconds": 589643,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 545584,
+        "user_time_seconds": 19
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 314244,
+        "system_time_microseconds": 589643,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 555834,
+        "user_time_seconds": 19
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 48388,
+        "system_time_microseconds": 170385,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 289654,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getPatients",
+        "max_memory_kb": 48780,
+        "system_time_microseconds": 179716,
+        "system_time_seconds": 0,
+        "user_time_microseconds": 290970,
+        "user_time_seconds": 0
+    },
+    {
+        "function_name": "getAllPatients",
+        "max_memory_kb": 2112880,
+        "system_time_microseconds": 66000,
+        "system_time_seconds": 6,
+        "user_time_microseconds": 513833,
+        "user_time_seconds": 134
+    }
+]

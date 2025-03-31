@@ -1,38 +1,28 @@
-#include <iostream>
-#include <fstream>
-#include <random>
-#include <string>
-#include <vector>
-#include <lmdb.h>
-#include <chrono>
-#include <thread>
-#include "json.hpp"
-#include <ncurses.h>
+#include "./../include/interface.hpp"
 
-using json = nlohmann::json;
-using namespace std;
-using namespace chrono;
+std::atomic<bool> dataLoaded(false); // Bandera para indicar si la carga terminó
+vector<Patient> allPatients;         // Almacenará todos los pacientes
 
-// FUNCIONES PARA LA BASE DE DATOS
-void createDataBase();
-void insertData(const string &name, const string &lastName, const string &password);
-bool requestData(const string &username, const string &password);
-
-// FUNCIONES DE EXPERIENCIA DE INTERFAZ
+void loadAllPatients();
+void drawBox(int y, int x, int height, int width);
+void logout();
+void mostrarDatosMedicos();
+void mostrarDatosSistema();
+void sesionIniciada();
 void loadingScreen();
 void shutDownScreen();
-int mostrarMenu(vector<string> opciones, int inicio);
 void mostrarBienvenida();
-
-// FUNCIONES PARA EL INICIO DE SESION
+void mostrarMenuPrincipal();
 void readData(string &data, int line, int space, char ch, bool isPassword);
 void iniciarSesion();
 void crearUsuario();
-void mostrarMenuPrincipal();
+int mostrarMenu(vector<string> opciones, int inicio);
 
-// FUNCIONES DEL USUARIO
-void mostrarDatosSistema();
-void mostrarDatosMedicos();
+void loadAllPatients()
+{
+    allPatients = getAllPatients(); // Cargar todos los pacientes desde LMDB
+    dataLoaded = true;              // Marcar como completado
+}
 
 void drawBox(int y, int x, int height, int width)
 {
@@ -46,83 +36,32 @@ void drawBox(int y, int x, int height, int width)
     mvaddch(y + height - 1, x + width - 1, ACS_LRCORNER);
 }
 
-int main()
+void logout()
 {
-    initscr();            // Iniciar ncurses
-    keypad(stdscr, TRUE); // Habilitar las teclas especiales
-    noecho();             // No mostrar la entrada del usuario
-    curs_set(0);          // Ocultar el cursor
-
-    // createDataBase();
-
-    vector<string> opciones = {"Iniciar Sesion", "Crear Usuario", "Salir"};
-    bool flag = true;
-    loadingScreen();
-
-    while (flag)
+    mvprintw(1, 10, "Cerrando sesion");
+    for (int i = 0; i < 5; i++)
     {
-
-        mostrarBienvenida(); // Mostrar el mensaje de bienvenida
-        mostrarMenuPrincipal();
-        int opcion = mostrarMenu(opciones, 5); // Mostrar el menú
-
-        switch (opcion)
-        {
-        case 0:
-            iniciarSesion();
-            break;
-        case 1:
-            crearUsuario();
-            break;
-        case 2:
-            flag = false;
-            break;
-        }
+        mvprintw(1, 26 + i, ".");
+        refresh(); // Actualizar la pantalla
+        this_thread::sleep_for(milliseconds(500));
     }
-    shutDownScreen();
-    endwin(); // Finalizar ncurses
-    return 0;
-}
-
-void sesionIniciada()
-{
-    clear(); // Limpiar la pantalla
-    drawBox(1, 10, 5, 25);
-    mvprintw(2, 15, "MENU DE USUARIO");
-    mvprintw(4, 15, "Hola, Usuario!");
-    refresh(); // Actualizar la pantalla
-
-    vector<string> opciones = {"Vista de Informacion Medica", "Vista de Informacion del Sistema", "Cerrar Sesion"};
-
-    int opcion = mostrarMenu(opciones, 7);
-
-    switch (opcion)
-    {
-    case 0:
-        mostrarDatosMedicos();
-        sesionIniciada();
-        break;
-    case 1:
-        mostrarDatosSistema();
-        sesionIniciada();
-        break;
-    case 2:
-        clear();
-        break;
-    }
+    mostrarMenuPrincipal();
 }
 
 void mostrarDatosMedicos()
 {
-    clear(); // Limpiar la pantalla
-    drawBox(1, 10, 3, 28);
-    mvprintw(2, 15, "INFORMACION MEDICA");
-    refresh(); // Actualizar la pantalla
+    int patientsPerPage = 10;
+    int currentPage = 0;
+    int selected = 0;
+    vector<Patient> patients;
 
+    // Iniciar el hilo para cargar todos los pacientes
+    std::thread dataThread(loadAllPatients);
+    dataThread.detach(); // Desvincular el hilo para que siga en segundo plano
     vector<string> opciones = {
         "Pacientes",
         "Admisiones por Año",
-        "Enfermedades por Año",
+        "Enfermedades por Sexo",
         "Enfermedades por Edad",
         "Medicamento más Utilizados",
         "Volver al Menu"};
@@ -132,55 +71,119 @@ void mostrarDatosMedicos()
 
     while (flag)
     {
+        clear();
+        drawBox(1, 10, 3, 28);
+        mvprintw(2, 15, "INFORMACION MEDICA");
+        refresh();
         opcion = mostrarMenu(opciones, 4);
 
         switch (opcion)
         {
         case 0:
-            mvprintw(12, 10, "Pacientes");
+
+            clear();                                                                        // Limpiar la pantalla antes de mostrar resultados
+            mvprintw(2, 5, "Ingrese la cantidad de pacientes que desea consultar datos: "); // Muestra la instrucción inicial
+            refresh();                                                                      // Refrescar la pantalla
+            int ch;                                                                         // Variable para capturar la tecla presionada
+
+            // Loop para capturar la edad y mostrarla en tiempo real
+            while (true)
+            {
+                // Muestra la instrucción junto con la edad ingresada en tiempo real
+                mvprintw(2, 65, "%d", patientsPerPage);
+                refresh(); // Refrescar la pantalla
+
+                ch = getch(); // Obtener la tecla presionada
+
+                if (ch == 10)
+                { // Si se presiona ENTER, salir del bucle
+                    break;
+                }
+                else if (ch == KEY_BACKSPACE || ch == 127)
+                {                                           // Si se presiona BACKSPACE, borrar el último dígito
+                    patientsPerPage = patientsPerPage / 10; // Eliminar el último dígito
+                }
+                else if (ch >= '0' && ch <= '9')
+                { // Si es un número, agregarlo a la edad
+                    patientsPerPage = patientsPerPage * 10 + (ch - '0');
+                }
+
+                // Limpiar la pantalla para actualizar la edad ingresada
+                clear();
+                mvprintw(2, 5, "Ingrese la cantidad de pacientes que desea consultar datos: ");
+            }
+            clear();
+            patients = getPatients(patientsPerPage, currentPage);
+
+            if (patients.empty())
+            {
+                mvprintw(5, 5, "No hay pacientes registrados. Presione cualquier tecla para continuar.");
+                refresh();
+                getch();
+                continue;
+            }
+
+            selected = selectPatient(currentPage, patientsPerPage);
+            if (selected == -1)
+            {
+                continue;
+            }
+
+            showPatientDetails(patients[selected]);
+
+            // Limpiar después de mostrar los detalles y volver al menú
+            clear();
+            drawBox(1, 10, 3, 28);
+            mvprintw(2, 15, "INFORMACION MEDICA");
             refresh();
-            getch();
+
             break;
+
         case 1:
-            mvprintw(12, 10, "Admisiones por Año");
-            refresh();
-            getch();
-            break;
         case 2:
-            mvprintw(12, 10, "Enfermedades por Año");
-            refresh();
-            getch();
-            break;
         case 3:
-            mvprintw(12, 10, "Enfermedades por Edad");
-            refresh();
-            getch();
-            break;
         case 4:
-            mvprintw(12, 10, "Medicamento más Utilizados");
-            refresh();
-            getch();
+            if (!dataLoaded)
+            {
+                mvprintw(11, 10, "Cargando datos, por favor espere...");
+                refresh();
+                while (!dataLoaded)
+                {
+                    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+                }
+            }
+
+            // Después de que los datos se carguen, proceder con las opciones
+            if (opcion == 1)
+                admissionsByYear(allPatients);
+            else if (opcion == 2)
+                diseasesBySex(allPatients);
+            else if (opcion == 3)
+                diseasesByAge(allPatients);
+            else if (opcion == 4)
+                medicationsUsage(allPatients);
+
             break;
+
         case 5:
             flag = false;
             clear();
             break;
         }
 
-        move(12, 10); // Mover el cursor a la línea 2, columna 10
+        move(12, 10);
         clrtoeol();
     }
+    clear();
 }
 
 void mostrarDatosSistema()
 {
-    clear(); // Limpiar la pantalla
-    drawBox(1, 10, 3, 28);
-    mvprintw(2, 15, "INFORMACION SISTEMA");
-    refresh(); // Actualizar la pantalla
+    clear();                                  // Limpiar la pantalla
+    refresh();                                // Actualizar la pantalla
+    std::string dbFilePath = "./DB/data.mdb"; // Ruta al archivo de la base de datos LMDB
 
     vector<string> opciones = {
-        "Tiempo de Respuesta del Servidor",
         "Tiempo de Ejecución de las Funciones de Consulta",
         "Recursos Usados",
         "Memoria de la Base de Datos",
@@ -191,31 +194,34 @@ void mostrarDatosSistema()
 
     while (flag)
     {
+        drawBox(1, 10, 3, 28);
+        mvprintw(2, 15, "INFORMACION SISTEMA");
         opcion = mostrarMenu(opciones, 4);
 
         switch (opcion)
         {
         case 0:
-            mvprintw(12, 10, "Tiempo de Respuesta del Servidor");
+            clear();
+            drawBox(1, 10, 3, 58);
+            mvprintw(2, 15, "TIEMPO DE EJECUCION DE LAS FUNCIONES DE CONSULTA");
+            loadAndPrintExecutionTimes();
             refresh();
-            getch();
             break;
         case 1:
-            mvprintw(12, 10, "Tiempo de Ejecución de las Funciones de Consulta");
+            clear();
+            drawBox(1, 10, 3, 29);
+            mvprintw(2, 15, "RECURSOS UTILIZADOS");
+            loadAndPrintResourceUsage();
             refresh();
-            getch();
             break;
         case 2:
-            mvprintw(12, 10, "Recursos Usados");
+            clear();
+            drawBox(1, 10, 3, 37);
+            mvprintw(2, 15, "MEMORIA DE LA BASE DE DATOS");
+            printDatabaseSize(dbFilePath);
             refresh();
-            getch();
             break;
         case 3:
-            mvprintw(12, 10, "Memoria de la Base de Datos");
-            refresh();
-            getch();
-            break;
-        case 4:
             flag = false;
             clear();
             break;
@@ -226,105 +232,37 @@ void mostrarDatosSistema()
     }
 }
 
-// void createDataBase()
-// {
-//     MDB_env *env; // Entorno de la base de datos
-//     MDB_dbi dbi;  // Base de datos
-//     MDB_txn *txn;
+void sesionIniciada()
+{
+    bool flag = true;
 
-//     // Crear el entorno de la base de datos
-//     mdb_env_create(&env);
-//     mdb_env_set_mapsize(env, 10485760);    // Establecer el tamaño máximo del entorno: 10 MB
-//     mdb_env_open(env, "./users", 0, 0664); // Abrir el entorno de la base de datos
-//     mdb_env_close(env);
-// }
+    while (flag)
+    {
+        clear(); // Limpiar la pantalla
+        drawBox(1, 10, 5, 25);
+        mvprintw(2, 15, "MENU DE USUARIO");
+        mvprintw(4, 15, "Hola, Usuario!");
+        refresh(); // Actualizar la pantalla
 
-// void insertData(const string &name, const string &lastName, const string &password)
-// {
-//     static int userIdCounter = 0; // Contador para user_id
-//     MDB_txn *txn;
-//     MDB_env *env; // Entorno de la base de datos
-//     MDB_dbi dbi;  // Base de datos
-//     MDB_val key, data;
+        vector<string> opciones = {"Vista de Informacion Medica", "Vista de Informacion del Sistema", "Cerrar Sesion"};
 
-//     // Crear el entorno de la base de datos
-//     mdb_env_create(&env);
-//     mdb_env_open(env, "./users", 0, 0664); // Abrir el entorno de la base de datos
-//     mdb_txn_begin(env, nullptr, 0, &txn);
-//     mdb_dbi_open(txn, nullptr, 0, &dbi);
+        int opcion = mostrarMenu(opciones, 7);
 
-//     // Incrementar el user_id
-//     userIdCounter++;
-
-//     string userId = to_string(userIdCounter);
-
-//     json user;
-//     user["user_id"] = userId;
-//     user["name"] = name;
-//     user["lastName"] = lastName;
-//     user["password"] = password; // Formato: name,lastName,password
-//     user["user_auth"] = "user";  // Formato: name,lastName,password
-
-//     string userData = user.dump();
-
-//     key.mv_size = userId.size();
-//     key.mv_data = (void *)userId.data();
-//     data.mv_size = userData.size();
-//     data.mv_data = (void *)userData.data();
-
-//     mdb_put(txn, dbi, &key, &data, 0); // Insertar el registro en la base de datos
-//     mdb_txn_commit(txn);               // Confirmar la transacción
-
-//     mdb_dbi_close(env, dbi);
-//     mdb_env_close(env);
-// }
-
-// // Función para validar usuario y contraseña
-// bool requestData(const string &username, const string &password)
-// {
-//     MDB_txn *txn;
-//     MDB_val key, data;
-//     int rc;
-
-//     // Iniciar una transacción
-//     rc = mdb_txn_begin(env, nullptr, MDB_RDONLY, &txn);
-//     if (rc != MDB_SUCCESS)
-//     {
-//         cerr << "Error beginning transaction: " << mdb_strerror(rc) << endl;
-//         return false;
-//     }
-
-//     // Crear la clave para buscar el usuario
-//     // En este caso, asumimos que el username es el userId
-//     key.mv_size = username.size();
-//     key.mv_data = (void *)username.data();
-
-//     // Buscar el registro en la base de datos
-//     rc = mdb_get(txn, dbi, &key, &data);
-//     if (rc != MDB_SUCCESS)
-//     {
-//         cerr << "Error getting data: " << mdb_strerror(rc) << endl;
-//         mdb_txn_abort(txn);
-//         return false; // Usuario no encontrado
-//     }
-
-//     // Convertir el valor recuperado a una cadena
-//     string userData(static_cast<char *>(data.mv_data), data.mv_size);
-
-//     // Parsear el JSON
-//     json user = json::parse(userData);
-
-//     // Extraer la contraseña almacenada
-//     string storedPassword = user["password"];
-
-//     // Comparar la contraseña ingresada con la almacenada
-//     bool isValid = (storedPassword == password);
-
-//     // Confirmar la transacción
-//     mdb_txn_commit(txn);
-
-//     return isValid;
-// }
+        switch (opcion)
+        {
+        case 0:
+            mostrarDatosMedicos();
+            break;
+        case 1:
+            mostrarDatosSistema();
+            break;
+        case 2:
+            flag = false;
+            clear();
+            break;
+        }
+    }
+}
 
 // Función para simular una pantalla de carga
 void loadingScreen()
@@ -417,6 +355,8 @@ void readData(string &data, int line, int space, char ch, bool isPassword)
 
 void iniciarSesion()
 {
+    string SECRET_KEY = getEnvVar("SECRET_KEY");
+    string IV = getEnvVar("IV");
     clear(); // Limpiar la pantalla
     drawBox(1, 10, 3, 26);
     mvprintw(2, 15, "INICIO DE SESION");
@@ -453,23 +393,22 @@ void iniciarSesion()
     noecho(); // Ocultar la entrada del usuario nuevamente
     refresh();
 
-    // if (requestData(username, password))
-    // {
-    //     sesionIniciada();
-    // }
-    // else
-    // {
-    //     mvprintw(9, 10, "Error: usuario o contraseña incorrectos.");
-    //     refresh();
-    //     getch();             // Esperar a que el usuario presione una tecla
-    //     mostrarBienvenida(); // Volver a mostrar la bienvenida
-    // }
-
-    sesionIniciada();
+    if (validateUser(username, password, SECRET_KEY, IV))
+    {
+        sesionIniciada();
+    }
+    else
+    {
+        refresh();
+        getch();                // Esperar a que el usuario presione una tecla
+        mostrarMenuPrincipal(); // Volver a mostrar la bienvenida
+    }
 }
 
 void crearUsuario()
 {
+    string SECRET_KEY = getEnvVar("SECRET_KEY");
+    string IV = getEnvVar("IV");
     clear(); // Limpiar la pantalla
     drawBox(1, 10, 3, 23);
     mvprintw(2, 15, "CREAR USUARIO");
@@ -515,7 +454,7 @@ void crearUsuario()
     noecho(); // Ocultar la entrada del usuario nuevamente
     refresh();
 
-    // insertData(name, lastName, password);
+    createUser(name, lastName, password, SECRET_KEY, IV); // Crear el usuario
 
     iniciarSesion(); // Volver a mostrar la bienvenida
 }
@@ -532,7 +471,7 @@ int mostrarMenu(vector<string> opciones, int inicio)
         {
             if (i == seleccion)
             {
-                mvprintw(inicio + i, 10, "> %s <", opciones[i].c_str()); // Imprimir opción seleccionada con flechas
+                mvprintw(inicio + i, 10, ">%s<", opciones[i].c_str()); // Imprimir opción seleccionada con flechas
             }
             else
             {
